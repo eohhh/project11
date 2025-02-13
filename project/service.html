@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>방명록</title>
+   <link rel="stylesheet" href="css/book.css">
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #f4f4f4;
+         text-align: center;
+      }
+      h3 {
+         color: #333;
+      }
+      #t1 {
+         width: 50%;
+         margin: auto;
+         border-collapse: collapse;
+         background: white;
+      }
+      th, td {
+         padding: 10px;
+         border: 1px solid black;
+      }
+      input[type="text"], input[type="password"] {
+         width: 100%;
+         padding: 5px;
+      }
+      input[type="button"] {
+         background: #28a745;
+         color: white;
+         border: none;
+         padding: 10px;
+         cursor: pointer;
+         width: 100%;
+      }
+      input[type="button"]:hover {
+         background: #218838;
+      }
+      #list {
+         margin-top: 20px;
+         padding: 10px;
+         background: white;
+         width: 50%;
+         margin: auto;
+         border: 1px solid black;
+      }
+      .home-btn {
+         background: #007bff;
+         margin-top: 10px;
+      }
+      .home-btn:hover {
+         background: #0056b3;
+      }
+   </style>
+</head>
+
+<body>
+   <h3>방명록</h3>
+   <form name="f">
+      <table id="t1">
+         <tr>
+            <th>작성자</th>
+            <td><input type="text" name="writer" id="writer"></td>
+         </tr>
+         <tr>
+            <th>글 비밀번호</th>
+            <td><input type="password" name="pwd" id="pwd"></td>
+         </tr>
+         <tr>
+            <th>내용</th>
+            <td><input type="text" name="content" id="content"></td>
+         </tr>
+         <tr>
+            <th>작성</th>
+            <td><input type="button" value="작성" onclick="a()"></td>
+         </tr>
+         <tr>
+            <th>홈</th>
+            <td><input type="button" class="home-btn" value="홈" onclick="location.href='index.html'"></td>
+         </tr>
+      </table>
+   </form>
+   <div id="list"></div>
+   
+   <!-- 수정폼 -->
+   <table id="editf" style="display: none; margin: auto; background: white;">
+      <tr>
+         <th>작성자</th>
+         <td><input type="text" name="editwriter" id="editwriter"></td>
+      </tr>
+      <tr>
+         <th>글 비밀번호</th>
+         <td><input type="password" name="editpwd" id="editpwd"></td>
+      </tr>
+      <tr>
+         <th>내용</th>
+         <td><input type="text" name="editcontent" id="editcontent"></td>
+      </tr>
+      <tr>
+         <td colspan="2" class="join"><a href="signup.html">회원가입</a></td>
+      </tr>
+   </table>
+   
+   <script src="book.js"></script>
+</body>
+
+</html>
