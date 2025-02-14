@@ -1,27 +1,31 @@
-let user = [
-  {id : 'user01', pw: '1111'},
-  {id : 'user02', pw: '2222'},
-  {id : 'user03', pw: '3333'},
-  {id : 'ss'}
+let user = [{
+  id: 'user01',
+  pw: '1111'
+},
+{
+  id: 'user02',
+  pw: '2222'
+},
+{
+  id: 'user03',
+  pw: '3333'
+},
 ]
 
-let user_json = JSON.stringify(user);
-localStorage.setItem('use', user_json);
+
+// let user_json = JSON.stringify(user);
+localStorage.setItem('use', JSON.stringify(user));
+
 user = JSON.parse(localStorage.getItem('use'));
 
-console.log(user);
-
-let userId =document.querySelector('input#userId');
+let userId = document.querySelector('input#userId');
 let userPw = document.querySelector('input#userPw');
-let members = JSON.parse(localStorage.getItem('members'));
-console.log(members);
 
-
-document.querySelector('form').addEventListener('submit', function(e) { 
+document.querySelector('form').addEventListener('submit', function (e) {
   e.preventDefault();
   console.log(userId.value, userPw.value);
-  console.log(user);
-  for(let i = 0; i < user.length; i++) {
+
+  for (let i = 0; i < user.length; i++) {
     console.log(user[i])
     if (user[i].id == userId.value && user[i].pw == userPw.value) {
       alert('로그인성공');
@@ -30,8 +34,14 @@ document.querySelector('form').addEventListener('submit', function(e) {
       return;
     }
   }
-  alert('다시 확인하세요.')
+  alert('비밀번호 불일치.')
 });
+
+function logout() {
+  localStorage.removeItem('sign');
+  alert('로그아웃 되었습니다.');
+  window.location.href = "blog.html"
+}
 // ------------------------------------------------------------------------- //
 
 // document.getElementById("test").addEventListener("submit", function (event) {
@@ -48,5 +58,3 @@ document.querySelector('form').addEventListener('submit', function(e) {
 //       alert("아이디와 비밀번호를 입력하세요.");
 //   }
 // });
-
-

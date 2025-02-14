@@ -13,54 +13,50 @@ function a() {
 }
 
 function mkDiv(writer, pwd, content) {
-  let newDiv = document.createElement("div"); //새 div태그 생성  <div id="d_1" pwd='111'>
-  newDiv.id = "d_" + cnt; //생성한 div에 id 지정. d_cnt
+  let newDiv = document.createElement("div");
+  newDiv.id = "d_" + cnt;
   newDiv.pwd = pwd;
-  let html = ""; //생성된 div에 출력될 내용
+  let html = "";
   html += "작성자: <span id='w_" + cnt + "'>" + writer + "</span><br/>";
   html += "내용: <span id='c_" + cnt + "'>" + content + "</span><br/>";
-  html += "<input type='button' value='수정' onclick=editForm(" + cnt +
-    ")>"; //editForm(2)
-  html += "<input type='button' value='삭제' onclick=del(" + cnt + ")>";
+  // html += "<input type='button' value='수정' onclick='editForm(" + cnt + ")'>";
+  html += "<input type='button' value='삭제' onclick='del(" + cnt + ")'>";
   newDiv.innerHTML = html;
   cnt++;
   return newDiv;
 }
 
 function editForm(cnt) {
-  let editDiv = document.getElementById("d_" + cnt); //수정할 글의 div
+  console.log(cnt)
+  let editDiv = document.getElementById("d_" + cnt);
   let editForm = document.getElementById("editf");
-  editDiv.appendChild(editForm);
   let writer = document.getElementById("w_" + cnt).innerHTML;
   let content = document.getElementById("c_" + cnt).innerHTML;
   document.getElementById("editwriter").value = writer;
   document.getElementById("editcontent").value = content;
-  document.getElementById("editbtn").cnt = cnt; //버튼에 cnt속성을 추가해서, 수정 글번호를 저장
+  document.getElementById("editbtn").cnt = cnt;
   editForm.style.display = '';
+  document.body.appendChild(editForm); // append back to body
 }
 
 function cancel() {
   let editForm = document.getElementById("editf");
   editForm.style.display = 'none';
-  document.getElementsByTagName("body")[0].appendChild(editForm);
-
+  document.body.appendChild(editForm); // append back to body
 }
 
 function edit() {
   let cnt = document.getElementById("editbtn").cnt;
   let editDiv = document.getElementById("d_" + cnt);
-  let pwd2 = document.getElementById("editpwd").value; //수정폼에 입력한 글 비밀번호
+  let pwd2 = document.getElementById("editpwd").value;
   if (editDiv.pwd != pwd2) {
-    alert("글 비밀번호 불일치. 수정불가");
+    alert("비밀번호를 확인하세요.");
   } else {
     let newWriter = document.getElementById("editwriter").value;
     let newContent = document.getElementById("editcontent").value;
     document.getElementById("w_" + cnt).innerHTML = newWriter;
     document.getElementById("c_" + cnt).innerHTML = newContent;
   }
-  document.getElementById("editwriter").value = "";
-  document.getElementById("editcontent").value = "";
-  document.getElementById("editpwd").value = "";
   cancel();
 }
 

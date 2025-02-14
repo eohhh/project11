@@ -5,6 +5,9 @@ let pw = document.querySelector('input#pw');
 let btn = document.querySelector('input#btn');
 let obj = new Object();
 
+
+document.addEventListener('DOMContentLoaded', (e) => {
+});
 document.querySelector('form').addEventListener('submit', function (e) {
   e.preventDefault()
   console.log(na.value);
@@ -21,6 +24,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
       js.push(obj);
       localStorage.setItem("use", JSON.stringify(js));
       alert("회원가입완료!!");
+      console.log(js)
       location.href = 'blog.html';
     }
     break;

@@ -2,7 +2,6 @@ table {
   width: 280px;
   height: 550px;
   margin: auto;
-
 }
 
 .email {
@@ -60,3 +59,23 @@ select {
   padding-left: 10px;
   background-color: rgb(61, 135, 255);
 }
+
+/* body {
+  background-image: url(..images/login.png);
+  background-image: url(../images/banner-bg.png); */
+
+/* } */
+/* body {
+  width: 100%;
+  float: left;
+  background-image: url(../images/login1.jpg);
+  height: auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+h2 {
+  color: white;
+}
+td {
+  color: white;
+} */

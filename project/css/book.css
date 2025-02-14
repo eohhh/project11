@@ -32,3 +32,52 @@ h1 {
 .guestbook-entry p {
   margin: 5px 0;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+h3 {
+  color: #333;
+}
+#t1 {
+  width: 50%;
+  margin: auto;
+  border-collapse: collapse;
+  background: white;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid black;
+}
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 5px;
+}
+input[type="button"] {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+input[type="button"]:hover {
+  background: #218838;
+}
+#list {
+  margin-top: 20px;
+  padding: 10px;
+  background: white;
+  width: 50%;
+  margin: auto;
+  border: 1px solid black;
+}
+.home-btn {
+  background: #007bff;
+  margin-top: 10px;
+}
+.home-btn:hover {
+  background: #0056b3;
+}
